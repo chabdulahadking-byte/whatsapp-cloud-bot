@@ -1,7 +1,8 @@
 const {
     default: makeWASocket,
     useMultiFileAuthState,
-    DisconnectReason
+    DisconnectReason,
+    Browsers
 } = require('@whiskeysockets/baileys');
 
 const { Boom } = require('@hapi/boom');
@@ -42,6 +43,7 @@ async function startWhatsApp() {
 
         sock = makeWASocket({
             auth: state,
+            browser: Browsers.macOS('Chrome'),
             printQRInTerminal: false,
             markOnlineOnConnect: false
         });
