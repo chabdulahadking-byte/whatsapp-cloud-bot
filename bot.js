@@ -2,7 +2,7 @@ const { default: makeWASocket, useMultiFileAuthState } = require('@whiskeysocket
 const http = require('http');
 
 // Monday.com API Configuration
-const MONDAY_API_TOKEN = 'PASTE_YOUR_MONDAY_API_TOKEN_HERE';
+const MONDAY_API_TOKEN = 'eyJhbGciOiJIUzI1NiJ9.eyJ0aWQiOjcwNzk0NTIyNSwiYWFpIjoxMSwidWlkIjoxMTc2MzE1MDcsImlhZCI6IjIwMjYtMDktMjZUMDQ6NTM6NDQuMDAwWiIsInBlciI6Im1lOndyaXRlIiwiYWN0aWQiOjM3MDc4NTQ2LCJyZ24iOiJhcHNlMiJ9.uaeIIp-pvQIyIik1UFQLQCr6g2UqZY9yt_A4uFoHpus';
 const BOARD_ID = 5031564967;
 
 let sock;
