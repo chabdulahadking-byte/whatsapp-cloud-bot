@@ -1,16 +1,18 @@
 {
   "name": "whatsapp-cloud-bot",
   "version": "1.0.0",
+  "private": true,
   "main": "bot.js",
   "scripts": {
     "start": "node bot.js"
   },
-  "dependencies": {
-    "@whiskeysockets/baileys": "^6.7.8",
-    "qrcode-terminal": "^0.12.0",
-    "pino": "^9.0.0"
-  },
   "engines": {
-    "node": ">=18.0.0"
+    "node": "20.x"
+  },
+  "dependencies": {
+    "@hapi/boom": "^10.0.1",
+    "@whiskeysockets/baileys": "6.7.8",
+    "qrcode": "1.5.4",
+    "qrcode-terminal": "0.12.0"
   }
 }
