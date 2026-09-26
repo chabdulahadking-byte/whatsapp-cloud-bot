@@ -1,6 +1,7 @@
 const {
     default: makeWASocket,
     useMultiFileAuthState,
+    fetchLatestBaileysVersion,
     DisconnectReason,
     Browsers
 } = require('@whiskeysockets/baileys');
@@ -41,11 +42,20 @@ async function startWhatsApp() {
         const { state, saveCreds } =
             await useMultiFileAuthState(AUTH_DIR);
 
+        const { version, isLatest } =
+            await fetchLatestBaileysVersion();
+
+        console.log(
+            `Using WhatsApp Web version ${version.join('.')}, latest: ${isLatest}`
+        );
+
         sock = makeWASocket({
+            version,
             auth: state,
-            browser: Browsers.macOS('Chrome'),
+            browser: Browsers.ubuntu('Chrome'),
             printQRInTerminal: false,
-            markOnlineOnConnect: false
+            markOnlineOnConnect: false,
+            syncFullHistory: false
         });
 
         sock.ev.on('creds.update', saveCreds);
